@@ -25,7 +25,6 @@ class Solution {
                 longSb.append(c);
             }
         }
-        System.out.println("shortSb = " + shortSb);
         // 항상 1의 자리가 index = 0
         longSb = longSb.reverse();
         shortSb = shortSb.reverse();
@@ -40,7 +39,6 @@ class Solution {
         String first = "";
         String second = "";
         for (int i = 0; i < longSb.length(); i++) {
-            System.out.println("i = " + i);
             first = String.valueOf(longSb.charAt(i));
             if (i >= shortSb.length()) {
                 second = "";
@@ -51,11 +49,7 @@ class Solution {
 
             // sum == 111/
             if (temp == 1) {
-                System.out.println(" temp == 1");
-
                 if ("".equals(second)) {
-                    System.out.println("second = " + second);
-                    System.out.println("first = " + first);
                     if("11".equals(first + String.valueOf(temp))){
                         result[i] = String.valueOf(0);
                         result[i + 1] = "1";
@@ -66,9 +60,6 @@ class Solution {
                     }
                 } else {
                     // temp == 1, second == "something"
-                    System.out.println("second = " + second);
-                    System.out.println("first = " + first);
-                    // sum == 11
                     if ("11".equals(first + second)) {
                         temp = 1;
                         result[i] = String.valueOf(1);
@@ -82,17 +73,13 @@ class Solution {
                     }
                 }
             }else{
-                System.out.println(" temp == 0");
-
                 if("".equals(second)){
-                    System.out.println("second = " + second);
                      if("1".equals(first)){
                          result[i] = String.valueOf(1);
                      }else{
                          result[i] = String.valueOf(0);
                      }
                 }else{
-                    System.out.println("second = " + second);
                     // sum == 11
                     if ("11".equals(first + second)) {
                         result[i+1] = "1";
@@ -103,7 +90,6 @@ class Solution {
                         temp = 0;
                     } else {
                         // sum == 10
-                        System.out.println("sum=====10");
                         result[i] = String.valueOf(1);
                         temp = 0;
                     }
